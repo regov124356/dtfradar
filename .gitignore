@@ -1,0 +1,14 @@
+# Sekrety - nigdy nie commitowac
+.env
+config.yaml
+*.secret
+
+# Dane lokalne
+*.db
+*.sqlite
+raport*.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
