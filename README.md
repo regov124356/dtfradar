@@ -37,4 +37,4 @@ od kilkudziesięciu do kilkuset zapytań, wysyłanych sekwencyjnie.
 
 ## Kontakt
 
-E-mail: ADRES_EMAIL_WLASCICIELA
+E-mail: mrwidmopl213@gmail.com
