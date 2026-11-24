@@ -31,7 +31,9 @@ ENVS = {
 }
 
 # Musi zgadzac sie z User-Agentem wygenerowanym na apps.developer.allegro.pl/user-agent
-USER_AGENT = os.environ.get("ALLEGRO_USER_AGENT", "DtfRadar/0.1.0")
+USER_AGENT = os.environ.get(
+    "ALLEGRO_USER_AGENT", "DtfRadar/0.1.0 (+https://github.com/regov124356/dtfradar)"
+)
 ACCEPT = "application/vnd.allegro.public.v1+json"
 
 
