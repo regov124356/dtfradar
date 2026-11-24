@@ -1,8 +1,6 @@
 """Test dostepu do Allegro REST API: czy GET /offers/listing dziala dla tej aplikacji.
 
-Uzycie (PowerShell):
-    $env:ALLEGRO_CLIENT_ID = "..."
-    $env:ALLEGRO_CLIENT_SECRET = "..."
+Uzycie: wpisz klucze do pliku .env (wzor: .env.example), potem:
     python test_allegro_api.py                  # produkcja
     python test_allegro_api.py --sandbox        # srodowisko testowe
     python test_allegro_api.py --phrase "koszulka z nadrukiem dtf"
@@ -18,6 +16,23 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+
+def load_dotenv(path=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")):
+    """Wczytuje KLUCZ=wartosc z pliku .env. Zmienne ustawione w systemie maja pierwszenstwo."""
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8-sig") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            value = value.strip().strip('"').strip("'")
+            if value:
+                os.environ.setdefault(key.strip(), value)
+
+
+load_dotenv()
 
 ENVS = {
     "prod": {
@@ -84,7 +99,7 @@ def main():
     client_id = os.environ.get("ALLEGRO_CLIENT_ID")
     client_secret = os.environ.get("ALLEGRO_CLIENT_SECRET")
     if not client_id or not client_secret:
-        print("Ustaw zmienne ALLEGRO_CLIENT_ID i ALLEGRO_CLIENT_SECRET.")
+        print("Wpisz ALLEGRO_CLIENT_ID i ALLEGRO_CLIENT_SECRET do pliku .env.")
         sys.exit(1)
 
     env = ENVS["sandbox" if args.sandbox else "prod"]
