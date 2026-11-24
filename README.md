@@ -35,6 +35,25 @@ od kilkudziesięciu do kilkuset zapytań, wysyłanych sekwencyjnie.
 
 `DtfRadar/0.1.0 (+https://github.com/regov124356/dtfradar)`
 
+## Uruchomienie
+
+Wymaga Pythona 3.10+, bez dodatkowych bibliotek.
+
+1. Skopiuj `.env.example` jako `.env` i wpisz klucze aplikacji.
+2. Uzupełnij koszty i frazy w `config.json`.
+3. Pobierz migawkę ofert i zrób raport:
+
+```
+python dtfradar.py fetch            # produkcja (wymaga weryfikacji /offers/listing)
+python dtfradar.py fetch --sandbox  # środowisko testowe Allegro
+python dtfradar.py fetch --demo     # dane DEMO bez API
+python dtfradar.py report --open    # raport HTML z ostatniej migawki
+python dtfradar.py runs             # lista migawek
+```
+
+Liczba sprzedanych sztuk jest szacowana z różnicy stanów magazynowych ofert między
+migawkami, dlatego `fetch` warto uruchamiać regularnie, np. co 3–7 dni.
+
 ## Kontakt
 
 E-mail: mrwidmopl213@gmail.com

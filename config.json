@@ -1,0 +1,29 @@
+{
+  "phrases": [
+    "koszulka dtf",
+    "koszulka z nadrukiem dtf",
+    "t-shirt nadruk dtf",
+    "koszulka własny nadruk"
+  ],
+  "category_id": null,
+  "sorts": ["relevance", "+price", "-price", "-popularity"],
+  "max_pages": 10,
+
+  "exclude_keywords": ["sitodruk", "haft", "haftowana", "sublimac"],
+  "require_keywords": [],
+
+  "costs": {
+    "_comment": "Koszt jednej koszulki w zł brutto. Uzupełnij własnymi liczbami.",
+    "koszulka": 14.0,
+    "nadruk_dtf": 9.0,
+    "pakowanie": 1.5,
+    "reklama_na_sztuke": 3.0,
+    "inne": 0.0
+  },
+  "commission_pct": 15.0,
+  "_commission_comment": "Prowizja Allegro w %. Wartość przykładowa - sprawdź aktualny cennik dla kategorii Moda.",
+  "vat_payer": false,
+  "vat_pct": 23,
+  "target_monthly_profit": 3000,
+  "saturation_offers": 20000
+}
